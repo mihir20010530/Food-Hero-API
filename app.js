@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const dbConfig = require("./config");
 const fileUpload = require("express-fileupload");
+const port = process.env.PORT || 9000;
 
 const app = express();
 
@@ -40,6 +41,6 @@ app.use("/requests", requestRouter);
 const adminRouter = require("./routers/admin");
 app.use("/admin", adminRouter);
 
-app.listen(9000, () => {
+app.listen(port , () => {
   console.log("running on server");
 });
